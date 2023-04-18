@@ -17,25 +17,108 @@ Seja bem vindo a Lucas Airlines
 
 ");
 
+int indexPassageiro = 0;
+string[] nomePassageiros = new string[5];
+string[] origem = new string[5];
+string[] destino = new string[5];
+string[] data = new string[5];
+
 
 Console.Write(@$"Digite a senha para acessar o menu:");
 
 string senha = Console.ReadLine();
 
-while( senha != "1234" )
+while (senha != "1234")
 {
- Console.Write(@$"Senha incorreta.Digite Novamente:");
- senha = Console.ReadLine();
-  
+    Console.Write(@$"Senha incorreta.Digite Novamente:");
+    senha = Console.ReadLine();
+
 }
 
 Console.WriteLine(@$"
 
 
-Bem vindo ao menu
+Bem vindo ao menu.
+
+1- Cadastrar passagem
+2- Listar Passagens
+0- Sair
 
 
 ");
+
+int escolhaMenu = 0;
+
+Console.WriteLine($"Escolha uma das opções");
+
+escolhaMenu = int.Parse(Console.ReadLine());
+
+
+switch (escolhaMenu)
+{
+    case 1:
+        if (escolhaMenu == 1)
+        {
+            Console.WriteLine($"Cadastre sua passagem");
+
+            for (var i = 0; i < 3; i++)
+            {
+                Console.WriteLine($"Digite o nome:");
+                nomePassageiros[indexPassageiro] = Console.ReadLine();
+
+                Console.WriteLine($"Qual é a origem da viagem ?");
+                origem[indexPassageiro] = Console.ReadLine();
+
+                Console.WriteLine($"Digite o destino da viagem:");
+                destino[indexPassageiro] = Console.ReadLine();
+
+
+                Console.WriteLine($"Qual é a data da viagem ?");
+                data[indexPassageiro] = Console.ReadLine();
+            }
+            
+          
+
+        }
+        break;
+    case 2:
+        if (escolhaMenu == 2)
+        {
+            Console.WriteLine($"Listar Passagens");
+
+for (int i = 0; i < 3; i++)
+{
+     Console.WriteLine(@$"
+            
+            {nomePassageiros[indexPassageiro]}
+            {origem[indexPassageiro]}
+            {destino[indexPassageiro]}
+            {data[indexPassageiro]}
+            
+            ");
+}
+            
+        }
+        break;
+    case 0:
+        if (escolhaMenu == 0)
+        {
+            Console.WriteLine($"Até a próxima");
+
+        }
+        break;
+    default:
+
+        break;
+
+}
+
+
+
+
+
+
+
 
 
 
