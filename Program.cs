@@ -75,9 +75,63 @@ switch (escolhaMenu)
 
                 Console.WriteLine($"Qual é a data da viagem ?");
                 data[indexPassageiro] = Console.ReadLine();
+                indexPassageiro++;
             }
+
+            Console.WriteLine($"Deseja continuar ?");
+            char sn = char.Parse(Console.ReadLine());
+
+            if (sn == 's')
+            {
+                Console.Clear();
+                Console.WriteLine($"Okay okay");
+
+                Console.WriteLine(@$"
+
+
+
+                1- Cadastrar passagem
+                2- Listar Passagens
+                0- Sair
+");
+                Console.WriteLine($"Escolha uma das opções");
+
+                escolhaMenu = int.Parse(Console.ReadLine());
+
+
+
+                if (escolhaMenu == 2)
+                {
+                    Console.WriteLine($"Listar Passagens");
+
+                    for (int i = 0; i < 3; i++)
+                    {
+                        Console.WriteLine(@$"
             
-          
+            {i + 1}º {nomePassageiros[indexPassageiro]}
+            {i + 1}º {origem[indexPassageiro]}
+            {i + 1}º {destino[indexPassageiro]}
+            {i + 1}º {data[indexPassageiro]}
+            
+            ");
+                    }
+
+                }
+
+
+
+            }
+            else
+            {
+                Console.WriteLine($"********************************************************");
+                Console.WriteLine($"*****Obrigado pela preferência em nossos serviços.******");
+                Console.WriteLine($"********************************************************");
+
+            }
+
+
+
+
 
         }
         break;
@@ -86,18 +140,18 @@ switch (escolhaMenu)
         {
             Console.WriteLine($"Listar Passagens");
 
-for (int i = 0; i < 3; i++)
-{
-     Console.WriteLine(@$"
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(@$"
             
-            {nomePassageiros[indexPassageiro]}
-            {origem[indexPassageiro]}
-            {destino[indexPassageiro]}
-            {data[indexPassageiro]}
+            {i + 1}º{nomePassageiros[indexPassageiro]}
+            {i + 1}º{origem[indexPassageiro]}
+            {i + 1}º{destino[indexPassageiro]}
+            {i + 1}º{data[indexPassageiro]}
             
             ");
-}
-            
+            }
+
         }
         break;
     case 0:
