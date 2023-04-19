@@ -12,9 +12,9 @@
 
 
 Console.WriteLine(@$"
-
-Seja bem vindo a Lucas Airlines
-
+*********************************
+-Seja bem vindo a Lucas Airlines-
+*********************************
 ");
 
 int indexPassageiro = 0;
@@ -61,7 +61,7 @@ switch (escolhaMenu)
         {
             Console.WriteLine($"Cadastre sua passagem");
 
-            for (var i = 0; i < 3; i++)
+            for (var i = 0; i < 5; i++)
             {
                 Console.WriteLine($"Digite o nome:");
                 nomePassageiros[indexPassageiro] = Console.ReadLine();
@@ -75,10 +75,11 @@ switch (escolhaMenu)
 
                 Console.WriteLine($"Qual é a data da viagem ?");
                 data[indexPassageiro] = Console.ReadLine();
+
                 indexPassageiro++;
             }
 
-            Console.WriteLine($"Deseja continuar ?");
+            Console.WriteLine($"Deseja continuar sim - s ou não - n ?");
             char sn = char.Parse(Console.ReadLine());
 
             if (sn == 's')
@@ -89,12 +90,14 @@ switch (escolhaMenu)
                 Console.WriteLine(@$"
 
 
+                 Bem vindo ao menu.
 
                 1- Cadastrar passagem
                 2- Listar Passagens
                 0- Sair
-");
-                Console.WriteLine($"Escolha uma das opções");
+
+
+                                         ");
 
                 escolhaMenu = int.Parse(Console.ReadLine());
 
@@ -104,14 +107,14 @@ switch (escolhaMenu)
                 {
                     Console.WriteLine($"Listar Passagens");
 
-                    for (int i = 0; i < 3; i++)
+                    for (int i = 0; i < indexPassageiro; i++)
                     {
                         Console.WriteLine(@$"
             
-            {i + 1}º {nomePassageiros[indexPassageiro]}
-            {i + 1}º {origem[indexPassageiro]}
-            {i + 1}º {destino[indexPassageiro]}
-            {i + 1}º {data[indexPassageiro]}
+            {i + 1}º {nomePassageiros[i]}
+            {i + 1}º {origem[i]}
+            {i + 1}º {destino[i]}
+            {i + 1}º {data[i]}
             
             ");
                     }
@@ -144,13 +147,15 @@ switch (escolhaMenu)
             {
                 Console.WriteLine(@$"
             
-            {i + 1}º{nomePassageiros[indexPassageiro]}
-            {i + 1}º{origem[indexPassageiro]}
-            {i + 1}º{destino[indexPassageiro]}
-            {i + 1}º{data[indexPassageiro]}
+            {i + 1}º {nomePassageiros[indexPassageiro]}
+            {i + 1}º {origem[indexPassageiro]}
+            {i + 1}º {destino[indexPassageiro]}
+            {i + 1}º {data[indexPassageiro]}
             
             ");
             }
+
+            
 
         }
         break;
